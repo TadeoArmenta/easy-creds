@@ -535,8 +535,7 @@ if [[ $VAR = y ]];then
     esac
     sleep 2
 fi
-unset TUNIFACE
-while [ -z "${TUNIFACE}" ]; do read -p "Enter your tunnel interface, example at0: " TUNIFACE; done
+TUNIFACE=at0 # does it ever need to be anything else?
 read -p "Do you have a dhcpd.conf file to use? [y/N]: " DHCPFILE
 DHCPFILE=$(echo ${DHCPFILE} | tr 'A-Z' 'a-z')
 if [ "${DHCPFILE}" == "y" ]; then
